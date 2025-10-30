@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20250919/pngtree-ornate-dark-frame-with-intricate-silver-filigree-image_19497328.webp");
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Center container */
+.container {
+  position: relative;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Logo styling */
+.logo {
+  width: 500px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 120px; 
+  position: relative;
+  z-index: 2;
+  animation: popIn 1.5s ease forwards;
+}
+.logo text {
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  border-radius: 50%; 
+  position: relative;
+  animation: popIn 1.5s ease forwards;
+}
+/* Rotating ring animation */
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 4px solid rgba(192, 192, 192, 0.6);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  animation: rotateRing 12s linear infinite;
+  background: conic-gradient(from 0deg, rgba(255,255,255,0.1) 0deg, rgba(200,200,200,0.3) 180deg, rgba(255,255,255,0.1) 360deg);
+}
+
+@keyframes rotateRing {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.title {
+  color: #fff;
+  font-size: 38px;
+  margin-top: 30px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+.subtitle {
+  color: #d4d4d4;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: rgba(221, 214, 214, 0.576);
+  transition: 0.4s;
+}
+
+.btn:hover::before {
+  left: 0;
+}
+
+.btn.silver {
+  background: linear-gradient(90deg, #c0c0c0, #f2f2f2);
+  color: #222;
+  box-shadow: 0 0 15px rgba(213, 208, 208, 0.898);
+}
+.btn.silver:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.btn.gold {
+  background: linear-gradient(90deg, #ffcc33, #ffb300);
+  color: #222;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.6);
+}
+.btn.gold:hover {
+  box-shadow: 0 0 25px rgba(255, 204, 51, 0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Reset basic styles */
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Glassy Header */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.055);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 40px;
+  z-index: 1000;
+  animation: fadeInDown 1s ease;
+}
+
+/* Email on left */
+.email-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  animation: glow -1s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fffbfbb4; }
+  to { text-shadow: 0 0 20px #ffffff, 0 0 30px #d0d0d0; }
+}
+
+/* Contact buttons on right */
+.contact-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c8c0c0af;
+  backdrop-filter: blur(50px);
+  background: rgba(105, 103, 103, 0.637);
+  border: 1px solid rgba(22, 21, 21, 0.217);
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Button colors */
+.whatsapp { color: #25d366; }
+.phone { color: #4dd0e1; }
+.insta { color: #e1306c; }
+.Gold { color: #b29c2e}
+
+/* Fade-in animation for header */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
